@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JS之this指向问题 | Memory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this中的几种应用场景    当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。 一、 直接调用，直接不带任何形式去调用函数，    则this会指向全局对象，因为没有其他影响去改变this，    this默认就是指向全局对象（浏览器是window，Node中是global）的。    这个结论是在非严格模式的情况下，严格模式下这个thi">
+  <meta name="description" content="this中的几种应用场景当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS之this指向问题">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/JS之this指向问题/index.html">
 <meta property="og:site_name" content="Memory">
-<meta property="og:description" content="this中的几种应用场景    当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。 一、 直接调用，直接不带任何形式去调用函数，    则this会指向全局对象，因为没有其他影响去改变this，    this默认就是指向全局对象（浏览器是window，Node中是global）的。    这个结论是在非严格模式的情况下，严格模式下这个thi">
+<meta property="og:description" content="this中的几种应用场景当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-16T09:38:33.699Z">
+<meta property="og:updated_time" content="2018-08-16T10:00:24.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS之this指向问题">
-<meta name="twitter:description" content="this中的几种应用场景    当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。 一、 直接调用，直接不带任何形式去调用函数，    则this会指向全局对象，因为没有其他影响去改变this，    this默认就是指向全局对象（浏览器是window，Node中是global）的。    这个结论是在非严格模式的情况下，严格模式下这个thi">
+<meta name="twitter:description" content="this中的几种应用场景当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。">
   
     <link rel="alternative" href="/atom.xml" title="Memory" type="application/atom+xml">
   
@@ -166,7 +166,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>this中的几种应用场景<br>    当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。</p>
+        <h2 id="this中的几种应用场景"><a href="#this中的几种应用场景" class="headerlink" title="this中的几种应用场景"></a>this中的几种应用场景</h2><pre><code>当函数被调用时，才会确定该函数内this的指向。要确定函数中this的指向，必须先找到该函数被调用的位置。
+</code></pre><a id="more"></a>
 <p>一、 直接调用，直接不带任何形式去调用函数，<br>    则this会指向全局对象，因为没有其他影响去改变this，<br>    this默认就是指向全局对象（浏览器是window，Node中是global）的。<br>    这个结论是在非严格模式的情况下，严格模式下这个this其实是undefined的</p>
 <pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
 </code></pre><p>二、 谁调用的这个函数，这个函数中的this就指向谁。<br>    以下情况</p>
